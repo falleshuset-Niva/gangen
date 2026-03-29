@@ -8,12 +8,26 @@
 <style>
 body { margin:0; background:black; color:white; font-family:Arial; overflow:hidden; }
 
-#video { width:100%; height:85vh; border:none; }
+#topbar {
+  position:absolute;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:10px 20px;
+  font-size:20px;
+}
+
+#video {
+  width:100%;
+  height:85vh;
+  border:none;
+}
 
 #ticker {
   height:15vh;
   background:#111;
-  font-size:32px;
+  font-size:30px;
   display:flex;
   align-items:center;
   overflow:hidden;
@@ -33,12 +47,25 @@ body { margin:0; background:black; color:white; font-family:Arial; overflow:hidd
 
 <body>
 
+<div id="topbar">
+  <div id="clock"></div>
+  <div>Fælleshuset</div>
+</div>
+
 <iframe id="video" src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1"></iframe>
 
 <div id="ticker">
-  <span>Velkommen til fælleshuset – vi ønsker jer en dejlig dag ☀️</span>
+  <span>Velkommen til fælleshuset – det virker nu 🎉</span>
 </div>
 
+<script>
+setInterval(() => {
+  const now = new Date();
+  document.getElementById("clock").innerText =
+    now.toLocaleTimeString("da-DK") + " | " +
+    now.toLocaleDateString("da-DK");
+}, 1000);
+</script>
+
 </body>
-</html># gangen
-tv på gangen
+</html>
