@@ -52,7 +52,9 @@ body { margin:0; background:black; color:white; font-family:Arial; overflow:hidd
   <div>Fælleshuset</div>
 </div>
 
-<iframe id="video" src="https://www.youtube.com/embed/ScMzIvxBSi4?playsinline=1&autoplay=1&mute=1&controls=1"></iframe>
+<div id="video" style="width:100%;height:85vh;display:flex;align-items:center;justify-content:center;background:black;">
+  <button onclick="startVideo()" style="font-size:30px;padding:20px;">▶ Start TV</button>
+</div>
 
 <div id="ticker">
   <span>Velkommen til fælleshuset – det virker nu 🎉</span>
@@ -69,3 +71,9 @@ setInterval(() => {
 
 </body>
 </html>
+<script>
+function startVideo() {
+  document.getElementById("video").innerHTML =
+    '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=0&playsinline=1" frameborder="0" allowfullscreen></iframe>';
+}
+</script>
